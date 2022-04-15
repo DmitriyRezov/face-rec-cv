@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/program_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="50sp"
+        android:layout_marginRight="10sp"
+        android:text="@string/program_name"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/text_color"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/greetings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10sp"
+        android:layout_marginTop="100sp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/greetings"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/text_color"
+        android:layout_below="@id/program_name"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/authorise"
+        android:layout_width="122dp"
+        android:layout_height="75dp"
+        android:layout_below="@id/greetings"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="150dp"
+        android:background="@color/buttons"
+        android:backgroundTint="@color/buttons"
+        android:text="@string/authorise"
+        android:textAlignment="center"
+        android:textColor="@color/text_color"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="251dp"
+        android:layout_height="75dp"
+        android:layout_below="@id/greetings"
+        android:layout_marginStart="150sp"
+        android:layout_marginTop="150dp"
+        android:background="@color/buttons"
+        android:backgroundTint="@color/buttons"
+        android:text="@string/register"
+        android:textAlignment="center"
+        android:textColor="@color/text_color"
+        android:textSize="15sp" />
+
+</RelativeLayout>

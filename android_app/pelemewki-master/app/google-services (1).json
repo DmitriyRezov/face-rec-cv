@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "109790225157",
+    "project_id": "my-project-1540487562343",
+    "storage_bucket": "my-project-1540487562343.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109790225157:android:3a3eab11d6f911b5ba8d6c",
+        "android_client_info": {
+          "package_name": "com.example.pelemewkiteamproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109790225157-pij221cm2bh826vuq1bev77c5es4scm3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc2mAthmZMeUjWI4VnjJFWf9qBMRVQ6pg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "109790225157-pij221cm2bh826vuq1bev77c5es4scm3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

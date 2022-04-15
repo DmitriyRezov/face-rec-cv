@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PP</string>
+    <string name="greetings">Здравствуйте, зарегистрируйтесь или войдите в аккаунт пожалуйста, тогда мы сможем поговорить с вами</string>
+    <string name="program_name">Pelemewki Team Project</string>
+    <string name="authorise">Войти</string>
+    <string name="register">Зарегистрироваться</string>
+</resources>

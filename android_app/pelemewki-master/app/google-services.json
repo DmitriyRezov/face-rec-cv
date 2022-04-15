@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "819256377681",
+    "project_id": "pelemewki-team-project",
+    "storage_bucket": "pelemewki-team-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819256377681:android:040f12f31eedc9b7761370",
+        "android_client_info": {
+          "package_name": "com.example.pelemewkiteamproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819256377681-oc81hv0hiu5opvbbc61o6bpd7r51jq08.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCB8p6yknwvejRqXAudNO2b9UFg_PjIELk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819256377681-oc81hv0hiu5opvbbc61o6bpd7r51jq08.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
