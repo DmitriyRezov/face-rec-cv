@@ -1,22 +1,47 @@
+import face_recognition
+import pickle
 import cv2
-import numpy as np
 
-capture = cv2.VideoCapture(0)
-face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+data = pickle.loads(open('face_enc', "rb").read())
 
+print("Streaming started")
+video_capture = cv2.VideoCapture(0)
 while True:
-    ret, img = capture.read()
+    ret, frame = video_capture.read()
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    faces = faceCascade.detectMultiScale(gray,
+                                         scaleFactor=1.1,
+                                         minNeighbors=5,
+                                         minSize=(60, 60),
+                                         flags=cv2.CASCADE_SCALE_IMAGE)
 
-    faces = face_cascade.detectMultiScale(img, scaleFactor=1.5, minNeighbors=5, minSize=(20, 20))
+    rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    encodings = face_recognition.face_encodings(rgb)
+    names = []
+    for encoding in encodings:
+        matches = face_recognition.compare_faces(data["encodings"],
+                                                 encoding)
+        name = "Unknown"
 
-    for (x, y, w, h) in faces:
-        cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
+        if True in matches:
+            matchedIdxs = [i for (i, b) in enumerate(matches) if b]
+            counts = {}
 
-    cv2.imshow("From camera", img)
+            for i in matchedIdxs:
+                name = data["names"][i]
+                counts[name] = counts.get(name, 0) + 1
+            name = max(counts, key=counts.get)
 
-    k = cv2.waitKey(30) & 0xFF
-    if k == 27:
+        names.append(name)
+
+        for ((x, y, w, h), name) in zip(faces, names):
+            cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            cv2.putText(frame, name, (x, y), cv2.FONT_HERSHEY_SIMPLEX,
+                        0.75, (0, 255, 0), 2)
+    cv2.imshow("Frame", frame)
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-
-capture.release()
+video_capture.release()
 cv2.destroyAllWindows()
