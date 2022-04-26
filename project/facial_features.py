@@ -10,6 +10,7 @@ imagePaths = list(paths.list_images('Images'))
 knownEncodings = []
 knownNames = []
 # перебираем все папки с изображениями
+flag = 0
 for (i, imagePath) in enumerate(imagePaths):
     # извлекаем имя человека из названия папки
     name = imagePath.split(os.path.sep)[-2]

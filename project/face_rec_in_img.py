@@ -5,9 +5,12 @@ import time
 import cv2
 import os
 
-faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+
+cascPathface = os.path.dirname(
+    cv2.__file__) + "/data/haarcascade_frontalface_default.xml"
+faceCascade = cv2.CascadeClassifier(cascPathface)
 data = pickle.loads(open('face_enc', "rb").read())
-image = cv2.imread()
+image = cv2.imread("dataset (checked)/123.jpg")
 rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 faces = faceCascade.detectMultiScale(gray,
@@ -20,8 +23,8 @@ encodings = face_recognition.face_encodings(rgb)
 names = []
 
 for encoding in encodings:
-    matches = face_recognition.compare_faces(data["encodings"],
-                                             encoding)
+    matches = face_recognition.compare_faces(data["encodings"], encoding)
+
     name = "Unknown"
 
     if True in matches:
