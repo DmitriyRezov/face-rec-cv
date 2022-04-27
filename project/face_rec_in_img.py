@@ -4,6 +4,7 @@ import cv2
 
 faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 data = pickle.loads(open('face_enc', "rb").read())
+# пишем путь до файла (только латиница)
 image = cv2.imread(<Здесь_должен_быть_файл>)
 
 rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -37,4 +38,5 @@ for encoding in encodings:
             cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
             cv2.putText(image, name, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 cv2.imshow("Frame", image)
+# закрываем на крестик
 cv2.waitKey(0)
